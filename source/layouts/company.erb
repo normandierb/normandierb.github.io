@@ -1,0 +1,81 @@
+<% all_companies = current_resource.parent.children.sort_by{ |company| company.data.name } %>
+<% current_company_index = all_companies.index(current_resource) %>
+<% previous_company = current_company_index > 0 && all_companies[all_companies.index(current_resource) -1] %>
+<% next_company = all_companies[all_companies.index(current_resource) + 1] %>
+<% content_for :breadcrumb do %>
+  <%= link_to "Accueil", "/" %>
+  »
+  <%= link_to "Entreprises", "/companies/index.html" %>
+  »
+  <%= current_resource.data.name %>
+<% end %>
+<% wrap_layout :layout do %>
+
+  <section role="profile-content">
+    <h2><%= current_resource.data.name %></h2>
+    <%= content_tag :hr if yield.present? %>
+      <%= yield %>
+    <%= content_tag :hr if yield.present? %>
+    <dl>
+      <dt>Ville</dt>
+      <dd><%= current_resource.data.city %></dd>
+      <dt>Équipe</dt>
+      <dd>
+        <ul>
+          <%= current_resource.data.team.map { |slug, name|
+            link_to name, "/profiles/#{slug}.html" }.join(", ") %>
+        </ul>
+      </dd>
+
+
+      <dt>Prestataire de développement Rails</dt>
+      <dd><%= current_resource.data.providing_rails_development ? "Oui" : "Non" %></dd>
+
+      <dt>Propose des emplois Ruby / Rails</dt>
+      <dd><%= current_resource.data.has_jobs ? "Oui" : "Non" %></dd>
+
+      <dt>Cherche un prestataire Ruby / Rails</dt>
+      <dd><%= current_resource.data.looking_for_freelancer ? "Oui" : "Non" %></dd>
+
+      <dt>Expérience Ruby</dt>
+      <dd><%= current_resource.data.years %></dd>
+
+      <dt>Expertise</dt>
+      <dd>
+        <dl role="skills">
+          <% if current_resource.data.skills %>
+            <% current_resource.data.skills.each do |label, level| %>
+              <dt><%= label %></dt>
+              <dd><%= ("★" * level.to_i + "☆☆☆☆")[0..3] %></dd>
+            <% end %>
+          <% end %>
+        </dl>
+      </dd>
+
+
+      <dt>Autres expertises</dt>
+      <dd><%= current_resource.data.other_tools %></dd>
+
+      <dt>Utilisation de Rails en production</dt>
+      <dd>
+        <%= current_resource.data.has_running_rails_app.to_a.map{ |key|
+          {"hosted" => "hébergé et administré", "paas" => "en PaaS (Heroku, ...)"}[key] }.join(", ").capitalize %>
+      </dd>
+
+      <dt>Liens & contact</dt>
+      <dd>
+        <ul>
+          <%= content_tag(:li, link_to("Site web", current_resource.data.url)) if current_resource.data.url %>
+          <%= content_tag(:li, link_to("Profil Github", current_resource.data.github_url)) if current_resource.data.github_url %>
+          <%= content_tag(:li, link_to("Compte Twitter", current_resource.data.twitter_url)) if current_resource.data.twitter_url %>
+          <%= content_tag(:li, link_to("Profil Linkedin", current_resource.data.linkedin_url)) if current_resource.data.linkedin_url %>
+          <%= content_tag(:li, link_to("Profil Viadeo", current_resource.data.viadeo_url)) if current_resource.data.viadeo_url %>
+        </ul>
+      </dd>
+    </dl>
+  </section>
+
+  <%= link_to("« Entreprise précédente : #{previous_company.data.name}", previous_company) if previous_company %><%= " | " if previous_company && next_company %>
+  <%= link_to("Entrprise suivante : #{next_company.data.name} »", next_company) if next_company %>
+<% end %>
+

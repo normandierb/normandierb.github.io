@@ -1,0 +1,21 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Accueil", "/" %> » À propos
+<% end %>
+
+<dl>
+  <dt>Pour nous contacter</dt>
+  <dd>Envoyez un mail à l'adresse <a href="mailto:contact-web-temp@normandierb.fr" target="_blank">contact-web-temp@normandierb.fr</a>
+  </dd>
+  <dt>Outils utilisés pour le site</dt>
+  <dd><%= link_to "Middleman", "http://middlemanapp.com/", target: "_blank" %>, <%= link_to "Foundation 5", "http://foundation.zurb.com/", target: "_blank" %></dd>
+  <dt>Responsable de la publication</dt>
+  <dd>Clément Alexandre</dd>
+  <dt>Hébergement</dt>
+  <dd><%= link_to "Github", "https://github.com", target: "_blank" %></dd>
+  <dt>Compte Github de Normandie.rb</dt>
+  <dd><%= link_to "https://github.com/normandierb", "https://github.com/normandierb", target: "_blank" %></dd>
+  <dt>Code source du site</dt>
+  <dd><%= link_to "https://github.com/normandierb/normandierb.github.io/tree/source", "https://github.com/normandierb/normandierb.github.io/tree/source", target: "_blank" %></dd>
+</dl>
+
+<p>Le code source du site et son contenu sont placés sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/fr/" target="_blank">CC BY-NC-SA</a>.</p>

@@ -1,0 +1,17 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Accueil", "/" %>
+  »
+  <%= link_to "Articles", "/articles/index.html" %>
+  »
+  <%= current_resource.title %>
+<% end %>
+<% wrap_layout :layout do %>
+  <h3>Le <%= I18n.l current_resource.date.to_date, format: :long %> par <%= link_to current_resource.data.author, "/profiles/#{current_resource.data.author_slug}.html" %></h3>
+  <h2><%= current_resource.title %></h2>
+  <article>
+    <%= yield %>
+  </article>
+  <hr />
+  <h4>Tags : <%= current_resource.tags.map{ |tag| link_to(tag, tag_path(tag, 'articles'))}.join(" | ") %></h4>
+  <p>Cette article est placé sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/2.0/fr/" target="_blank">CC BY-NC-SA</a></p>
+<% end %>

@@ -1,0 +1,48 @@
+<% content_for :breadcrumb do %>
+  &nbsp;
+<% end %>
+<h2 id="welcome">Bienvenue sur le site du groupe des développeurs Ruby en Normandie !</h2>
+<hr />
+<h3>Prochains événements</h3>
+
+<% blog('events').articles.select{|event| event.date.to_date >= Date.today}.each do |event| %>
+  <article>
+    <h4><%= link_to "#{I18n.l(event.date.to_date, :format => :long).capitalize} : #{event.data.name}", event %></h4>
+    <h5><%= event.data.headline %></h5>
+    <%= event.summary(100) %>
+  </article>
+  <hr />
+<% end %>
+
+<article>
+  <h4><%= link_to "Janvier 2014 : Coding Dojo #3", "/events/dojo-3.html" %></h4>
+</article>
+<hr />
+<article>
+  <h4><%= link_to "Courant 2014 : CaenRb", "/events/caenrb.html" %>
+  </h4>
+</article>
+
+
+<hr />
+
+<h3>Derniers articles publiés</h3>
+<% blog('articles').articles[0...2].each do |article| %>
+  <article>
+    <h4><%= link_to article.title, article %><h4>
+    <h5>Le <%= I18n.l article.date.to_date, format: :long %> par <%= link_to article.data.author, "/profiles/#{article.data.author_slug}.html" %></h5>
+    <%= article.summary(50) %>
+    <h6>Tags: <%= article.tags.map{ |tag| link_to(tag, tag_path(tag, 'articles'))}.join(" | ") %></h6>
+    <hr />
+  </article>
+<% end %>
+
+<h3>Découvrez nos profils</h3>
+<p>
+  <%= sitemap.find_resource_by_path("/profiles/index.html").children.map{ |profile| link_to profile.data.name, profile}.join(" | ") %>
+</p>
+<hr />
+<h3>Découvrez les entreprises Ruby de la région</h3>
+<p>
+  <%= sitemap.find_resource_by_path("/companies/index.html").children.map{ |company| link_to company.data.name, company }.join(" | ") %>
+</p>

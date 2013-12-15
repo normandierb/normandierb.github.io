@@ -1,0 +1,6 @@
+{
+  "name": "normandierb",
+  "dependencies": {
+    "foundation": "zurb/bower-foundation#~5.0.2"
+  }
+}

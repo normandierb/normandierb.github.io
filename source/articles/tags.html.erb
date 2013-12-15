@@ -1,0 +1,13 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Accueil", "/" %>
+  »
+  <%= link_to "Articles", "/articles/index.html" %>
+  »
+  Tags
+<% end %>
+<h2>Tags</h2>
+<ul>
+<% blog(:articles).tags.each do |tag, articles| %>
+  <li><h3><%= link_to tag, tag_path(tag, 'articles') %> (<%= articles.size %>)</a></h3></li>
+<% end %>
+</ul>

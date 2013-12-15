@@ -1,0 +1,18 @@
+---
+layout: layout
+---
+
+<% content_for :breadcrumb do %>
+  <%= link_to "Accueil", "/" %>
+  »
+  Articles
+<% end %>
+
+
+<% blog(:articles).articles.each_with_index do |article, i| %>
+  <h2><%= link_to article.title, article %><h2>
+  <h3>Le <%= I18n.l article.date.to_date, format: :long %> par <%= link_to article.data.author, "/profiles/#{article.data.author_slug}.html" %></h3>
+  <%= article.summary(50) %>
+  <h4>Tags : <%= article.tags.map{ |tag| link_to(tag, tag_path(tag, 'articles'))}.join(" | ") %></h4>
+<% end %>
+

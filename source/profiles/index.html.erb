@@ -1,0 +1,13 @@
+---
+layout: layout
+---
+
+<% content_for :breadcrumb do %>
+  <%= link_to "Accueil", "/" %>
+  »
+  Profils
+<% end %>
+<h2>Développeurs Ruby en Normandie</h2>
+<% current_resource.children.sort_by{ |profile| profile.data.name }.each_with_index do |profile, i| %>
+  <h3><%= link_to "#{profile.data.name}, #{profile.data.city}", profile %></h3>
+<% end %>

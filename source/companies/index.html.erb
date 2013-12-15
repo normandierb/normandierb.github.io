@@ -1,0 +1,13 @@
+---
+layout: layout
+---
+
+<% content_for :breadcrumb do %>
+  <%= link_to "Accueil", "/" %>
+  »
+  Entreprises
+<% end %>
+<h2>Entreprises et prestataires Ruby en Normandie</h2>
+<% current_resource.children.sort_by{ |company| company.data.name }.each_with_index do |company, i| %>
+  <h3><%= link_to "#{company.data.name}, #{company.data.city}", company %></h3>
+<% end %>

@@ -1,0 +1,16 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Accueil", "/" %>
+  »
+  <%= link_to "Événements", "/events/index.html" %>
+  »
+  <%= current_resource.data.name %>
+<% end %>
+<% wrap_layout :layout do %>
+
+  <h2>
+    <%= current_resource.respond_to?(:date) ? I18n.l(current_resource.date.to_date, :format => :long).capitalize : current_resource.data.date_text %> : <%= current_resource.data.name %></h2>
+  <h3><%= current_resource.data.headline %></h3>
+  <article>
+    <%= yield %>
+  </article>
+<% end %>

@@ -1,0 +1,71 @@
+<% all_profiles = current_resource.parent.children.sort_by{ |profile| profile.data.name } %>
+<% current_profile_index = all_profiles.index(current_resource) %>
+<% previous_profile = current_profile_index > 0 && all_profiles[all_profiles.index(current_resource) -1] %>
+<% next_profile = all_profiles[all_profiles.index(current_resource) + 1] %>
+<% content_for :breadcrumb do %>
+  <%= link_to "Accueil", "/" %>
+  »
+  <%= link_to "Profils", "/profiles/index.html" %>
+  »
+  <%= current_resource.data.name %>
+<% end %>
+<% wrap_layout :layout do %>
+
+  <section role="profile-content">
+    <h2><%= current_resource.data.name %></h2>
+
+    <%= content_tag(:hr) if yield.present? %>
+    <%= yield %>
+    <%= content_tag(:hr) if yield.present? %>
+
+    <dl>
+      <dt>Société</dt>
+      <dd><%= link_to "#{current_resource.data.company}", "/companies/#{current_resource.data.company_slug}.html" %></dd>
+      <dt>En recherche d'emploi</dt>
+      <dd><%= current_resource.data.looking_for_a_job ? "Oui" : "Non" %></dd>
+      <dt>Disponible pour des missions freelance</dt>
+      <dd><%= current_resource.data.available_for_freelancing ? "Oui" : "Non" %></dd>
+
+      <dt>Ancienneté Ruby</dt>
+      <dd><%= current_resource.data.years %></dd>
+
+      <dt>Compétences</dt>
+      <dd>
+        <dl role="skills">
+          <% if current_resource.data.skills %>
+            <% current_resource.data.skills.each do |label, level| %>
+              <dt><%= label %></dt>
+              <dd><%= ("★" * level.to_i + "☆☆☆☆")[0..3] %></dd>
+            <% end %>
+          <% end %>
+        </dl>
+      </dd>
+
+      <dt>Autres expertises</dt>
+      <dd><%= current_resource.data.other_tools %></dd>
+
+      <dt>Utilisation de Rails en production</dt>
+      <dd>
+        <%= current_resource.data.has_running_rails_app.to_a.map{ |key|
+          {"hosted" => "hébergé et administré", "paas" => "en PaaS (Heroku, ...)"}[key] }.join(", ").capitalize %>
+      </dd>
+
+      <dt>Liens & contact</dt>
+      <dd>
+        <ul>
+          <%= content_tag(:li, link_to("Site web", current_resource.data.url)) if current_resource.data.url %>
+          <%= content_tag(:li, link_to("Profil Github", current_resource.data.github_url)) if current_resource.data.github_url %>
+          <%= content_tag(:li, link_to("Compte Twitter", current_resource.data.twitter_url)) if current_resource.data.twitter_url %>
+          <%= content_tag(:li, link_to("Profil Linkedin", current_resource.data.linkedin_url)) if current_resource.data.linkedin_url %>
+          <%= content_tag(:li, link_to("Profil Viadeo", current_resource.data.viadeo_url)) if current_resource.data.viadeo_url %>
+
+
+        </ul>
+      </dd>
+    </dl>
+  </section>
+
+  <%= link_to("« Profile précédent : #{previous_profile.data.name}", previous_profile) if previous_profile %><%= " | " if previous_profile && next_profile %>
+  <%= link_to("Profile suivant : #{next_profile.data.name} »", next_profile) if next_profile %>
+<% end %>
+

@@ -1,0 +1,32 @@
+<% content_for :breadcrumb do %>
+  <%= link_to "Accueil", "/" %>
+  »
+  Événements
+<% end %>
+<h2>Événements à venir</h2>
+<article class="coming-soon">
+  <h3><%= link_to "Courant 2014 : CaenRb", "/events/caenrb.html" %></h3>
+</article>
+<article class="coming-soon">
+  <h3><%= link_to "Janvier 2014 : Coding Dojo #3", "/events/dojo-3.html" %></h3>
+</article>
+
+<% blog('events').articles.select{|event| event.date.to_date >= Date.today}.each do |event| %>
+  <article>
+    <h3><%= link_to "#{I18n.l(event.date.to_date, :format => :long).capitalize} : #{event.data.name}", event %></h3>
+    <h4><%= event.data.headline %></h4>
+    <%= event.summary(400) %>
+  </article>
+<% end %>
+
+<hr />
+
+<h2>Événements passés</h2>
+
+<% blog('events').articles.select{|event| event.date.to_date < Date.today}.each do |event| %>
+  <article>
+    <h3><%= link_to "#{I18n.l(event.date.to_date, :format => :long).capitalize} : #{event.data.name}", event %></h3>
+    <h4><%= event.data.headline %></h4>
+    <%= event.summary(400) %>
+  </article>
+<% end %>

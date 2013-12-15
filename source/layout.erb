@@ -1,0 +1,82 @@
+<!doctype html>
+<!--[if IE 9]><html class="lt-ie10" lang="fr" > <![endif]-->
+<html class="no-js" lang="fr" >
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normandie.rb</title>
+    <%= feed_tag :atom, "/feed.xml", title: "Blog" %>
+    <script src="/assets/bower_components/modernizr/modernizr.js"></script>
+    <link rel="stylesheet" href="/assets/stylesheets/application.css" />
+  </head>
+  <body>
+    <header>
+      <h1><%= link_to "Normandie.rb", "/" %></h1>
+      <nav role="breadcrumb">
+        <%= yield_content(:breadcrumb) %>
+      </nav>
+    </header>
+    <div class="row">
+      <section role="main">
+        <%= yield %>
+      </section>
+      <aside>
+        <h2>Pages</h2>
+        <ul>
+          <li><%= link_to "Accueil", "/" %>
+          <li><%= link_to "Événements", "/events/index.html" %>
+          <li><%= link_to "Articles", "/articles/index.html" %>
+          <li><%= link_to "Profils", "/profiles/index.html" %>
+          <li><%= link_to "Entreprises", "/companies/index.html" %>
+          <li><%= link_to "À propos", "/about.html" %>
+        </ul>
+        <h2>Événements à venir</h2>
+        <ul>
+          <% blog('events').articles.select{|event| event.date.to_date >= Date.today}[0...5].each do |event| %>
+            <li><%= link_to "#{I18n.l(event.date.to_date, :format => :short)} : #{event.data.name}", event %></li>
+
+          <% end %>
+          <li><%= link_to "Janvier 2014 : Coding Dojo #3", "/events/dojo-3.html" %></li>
+          <li><%= link_to "Courant 2014 : CaenRb", "/events/caenrb.html" %></li>
+        </ul>
+
+        <h2>Articles récents</h2>
+        <ul>
+          <% blog(:articles).articles[0...10].each do |article| %>
+            <li><%= link_to article.title, article %></li>
+
+          <% end %>
+        </ul>
+
+        <h2>Tags</h2>
+        <ul>
+          <% blog(:articles).tags.each do |tag, articles| %>
+            <li><%= link_to tag, tag_path(tag, 'articles') %> (<%= articles.size %>)</a></li>
+          <% end %>
+        </ul>
+      </aside>
+    </div>
+    <footer>
+
+
+
+      <nav>
+        <%= link_to "Accueil", "/" %>
+        | <%= link_to "Événements", "/events/index.html" %>
+        | <%= link_to "Articles", "/articles/index.html" %>
+        | <%= link_to "Profils", "/profiles/index.html" %>
+        | <%= link_to "Entreprises", "/companies/index.html" %>
+        | <%= link_to "À propos", "/about.html" %>
+      </nav>
+
+    </footer>
+
+    <script src="/assets/bower_components/jquery/jquery.min.js"></script>
+    <script src="/assets/bower_components/foundation/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <%= google_analytics_tag %>
+  </body>
+</html>
