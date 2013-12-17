@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Normandie.rb</title>
+  <link href="http://www.normandierb.fr/feed.xml" rel="self"/>
+  <updated>2013-11-24T23:00:00Z</updated>
+  <author>
+    <name>Normandie.rb</name>
+  </author>
+  <entry>
+    <title>Coding Dojo #1</title>
+    <link rel="alternate" href="http://www.normandierb.fr/events/2013/11/25/dojo-1.html"/>
+    <id>http://www.normandierb.fr/events/2013/11/25/dojo-1.html</id>
+    <published>2013-11-24T23:00:00Z</published>
+    <updated>2013-12-17T15:28:17+01:00</updated>
+    <author>
+      <name>Normandie.rb</name>
+    </author>
+    <summary type="html">&lt;p&gt;Co-animé par &lt;a href="http://twitter.com/clm_a"&gt;Clément Alexandre&lt;/a&gt; et &lt;a href="http://twitter.com/Julien_ANNE"&gt;Julien Anne&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Rails est un framework qui est devenu, en dix ans, l'un des outils de conception web de référence.
+Il a inspiré de nombreux frameworks dans d'autres langages (CakePHP, Yii, Symfony, Grails, on encore...&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Co-animé par &lt;a href="http://twitter.com/clm_a"&gt;Clément Alexandre&lt;/a&gt; et &lt;a href="http://twitter.com/Julien_ANNE"&gt;Julien Anne&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Rails est un framework qui est devenu, en dix ans, l'un des outils de conception web de référence.
+Il a inspiré de nombreux frameworks dans d'autres langages (CakePHP, Yii, Symfony, Grails, on encore Play).
+Son équilibre entre dogmatisme et modularité en font un candidat idéal pour tout projet nécessitant un processus de déploiement industrialisé (Rails peut fonctionner par défaut avec SASS / Compass, CoffeeScript, Sprockets…).&lt;/p&gt;
+
+&lt;p&gt;Qu'est-ce qu'un Dojo ?
+C'est une réunion ou les participants sont invités à travailler sur un même projet.
+Nous travaillerons sur un mode agile et chaque itération sera effectuée par un binôme différent, en développement piloté par les tests.&lt;/p&gt;
+
+&lt;p&gt;Pendant ces Dojos, vous allez plonger dans le grand bain, en suivant et en contribuant à un projet ambitieux (parmi plusieurs proposés) mettant en œuvre Rails, AngularJS et la communication client-serveur temps réel.&lt;/p&gt;
+
+&lt;p&gt;Le but de ces ateliers est avant tout l'auto-apprentissage, sous notre œil bienveillant (nous tiendrons également le rôle de Product Owner) et nous pourrons à tout moment prendre le relais, vous porter secours ou répondre à vos questions.&lt;/p&gt;
+
+&lt;h3 id="pour-qui-"&gt;Pour qui ?&lt;/h3&gt;
+
+&lt;p&gt;Ce Dojo initialement proposé aux étudiants du Campus 2 est ouvert à tous, sur &lt;a href="https://docs.google.com/forms/d/1O7p8g2Rx9EmglHEhuv7_nBvyFuzYR4X1dTleqXcJHGo/viewform"&gt;inscription uniquement&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="o-quand-comment-"&gt;Où, Quand, Comment ?&lt;/h3&gt;
+
+&lt;p&gt;C'est le Lundi 25/11 à 17h30 au Campus 2.
+Les précisions d'accès vous seront transmises par e-mail.&lt;/p&gt;
+
+&lt;p&gt;Nous espérons vous voir nombreux !&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Coding Dojo #2</title>
+    <link rel="alternate" href="http://www.normandierb.fr/events/2013/12/16/dojo-2.html"/>
+    <id>http://www.normandierb.fr/events/2013/12/16/dojo-2.html</id>
+    <published>2013-12-15T23:00:00Z</published>
+    <updated>2013-12-17T15:28:17+01:00</updated>
+    <author>
+      <name>Normandie.rb</name>
+    </author>
+    <summary type="html">&lt;p&gt;Co-animé par &lt;a href="http://twitter.com/clm_a"&gt;Clément Alexandre&lt;/a&gt; et &lt;a href="http://twitter.com/Julien_ANNE"&gt;Julien Anne&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Après la réalisation succincte d'un back-end de Kanban, nous allons nous commencer à itérer sur la partie front-end.
+Nous nous aiderons soit d'AngularJS soit d'EmberJS, en fonction du choix des participants...&lt;/p&gt;</summary>
+    <content type="html">&lt;p&gt;Co-animé par &lt;a href="http://twitter.com/clm_a"&gt;Clément Alexandre&lt;/a&gt; et &lt;a href="http://twitter.com/Julien_ANNE"&gt;Julien Anne&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Après la réalisation succincte d'un back-end de Kanban, nous allons nous commencer à itérer sur la partie front-end.
+Nous nous aiderons soit d'AngularJS soit d'EmberJS, en fonction du choix des participants.&lt;/p&gt;
+
+&lt;p&gt;Qu'est-ce qu'un Dojo ?
+C'est une réunion ou les participants sont invités à travailler sur un même projet.
+Nous travaillerons sur un mode agile et chaque itération sera effectuée par un binôme différent, en développement piloté par les tests.&lt;/p&gt;
+
+&lt;p&gt;Pendant ces Dojos, vous allez plonger dans le grand bain, en suivant et en contribuant à un projet ambitieux (parmi plusieurs proposés) mettant en œuvre Rails, AngularJS et la communication client-serveur temps réel.&lt;/p&gt;
+
+&lt;p&gt;Le but de ces ateliers est avant tout l'auto-apprentissage, sous notre œil bienveillant (nous tiendrons également le rôle de Product Owner) et nous pourrons à tout moment prendre le relais, vous porter secours ou répondre à vos questions.&lt;/p&gt;
+
+&lt;h3 id="pour-qui-"&gt;Pour qui ?&lt;/h3&gt;
+
+&lt;p&gt;Ce Dojo initialement proposé aux étudiants du Campus 2 est ouvert à tous, sur &lt;a href="https://docs.google.com/forms/d/1O7p8g2Rx9EmglHEhuv7_nBvyFuzYR4X1dTleqXcJHGo/viewform"&gt;inscription uniquement&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id="o-quand-comment-"&gt;Où, Quand, Comment ?&lt;/h3&gt;
+
+&lt;p&gt;C'est le Lundi 16/12 à 17h30 au Campus 2.
+Les précisions d'accès vous sont transmises par e-mail quand vous vous inscrivez.&lt;/p&gt;
+
+&lt;p&gt;Nous espérons vous voir aussi nombreux que lors de la première session !&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Ressources pour bien démarrer avec Rails</title>
+    <link rel="alternate" href="http://www.normandierb.fr/articles/2013/12/16/bien-demarrer-avec-rails.html"/>
+    <id>http://www.normandierb.fr/articles/2013/12/16/bien-demarrer-avec-rails.html</id>
+    <published>2013-12-15T23:00:00Z</published>
+    <updated>2013-12-17T15:28:17+01:00</updated>
+    <author>
+      <name>Clément</name>
+    </author>
+    <summary type="html">&lt;p&gt;Voici une sélection de liens pour bien démarrer avec Ruby et Rails.&lt;/p&gt;
+
+&lt;h3 id="en-franais"&gt;En français&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.ruby-lang.org/fr/documentation/"&gt;Le site officiel de Ruby&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href="http://railsdebutant.org/fr_guides/getting_started"&gt;Rails Guides&lt;/a&gt; (Rails en version 3, aller sur le site anglais pour Rails 4)&lt;/li&gt;
+  &lt;li&gt;
+&lt;a href="http://www.jeveuxapprendreruby.fr/"&gt;Je veux apprendre Ruby&lt;/a&gt; (avec des resources en anglais)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="en-anglais"&gt;En anglais&lt;/h3&gt;</summary>
+    <content type="html">&lt;p&gt;Voici une sélection de liens pour bien démarrer avec Ruby et Rails.&lt;/p&gt;
+
+&lt;h3 id="en-franais"&gt;En français&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://www.ruby-lang.org/fr/documentation/"&gt;Le site officiel de Ruby&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://railsdebutant.org/fr_guides/getting_started"&gt;Rails Guides&lt;/a&gt; (Rails en version 3, aller sur le site anglais pour Rails 4)&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://www.jeveuxapprendreruby.fr/"&gt;Je veux apprendre Ruby&lt;/a&gt; (avec des resources en anglais)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="en-anglais"&gt;En anglais&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="http://guides.rubyonrails.org/getting_started.html"&gt;Rails Guides&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://railscasts.com/"&gt;Railcasts&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="http://railsforzombies.org/"&gt;Rails for zombies&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Configurer sa machine</title>
+    <link rel="alternate" href="http://www.normandierb.fr/articles/2013/12/16/configurer-sa-machine.html"/>
+    <id>http://www.normandierb.fr/articles/2013/12/16/configurer-sa-machine.html</id>
+    <published>2013-12-15T23:00:00Z</published>
+    <updated>2013-12-17T15:28:17+01:00</updated>
+    <author>
+      <name>Clément</name>
+    </author>
+    <summary type="html">&lt;p&gt;En cours de rédaction&lt;/p&gt;
+</summary>
+    <content type="html">&lt;p&gt;En cours de rédaction&lt;/p&gt;
+</content>
+  </entry>
+</feed>
